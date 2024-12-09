@@ -7,7 +7,7 @@ from dataclasses import dataclass, field
 class Node:
     value: str | int | float
     children: list["Node"] = field(default_factory=list)
-    parent: wr.ReferenceType["Node"] = wr.ref(None)
+    parent: wr.ReferenceType["Node"] = None
 
     def __repr__(self):
         return f"Node({self.value}, Parent: {self.parent()}, Chiledren: {len(self.children)})"
